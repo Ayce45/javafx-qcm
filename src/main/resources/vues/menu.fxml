@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="255.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.Menu">
+   <children>
+      <Pane layoutX="25.0" layoutY="20.0" prefHeight="216.0" prefWidth="377.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXComboBox fx:id="listeQuestionnaire" layoutX="76.0" layoutY="84.0" maxWidth="232.0" minWidth="214.0" prefHeight="40.0" prefWidth="232.0" promptText="Choisir un questionnaire :" />
+            <JFXButton onAction="#choixQuestionnaire" buttonType="RAISED" defaultButton="true" layoutX="76.0" layoutY="156.0" prefHeight="32.0" prefWidth="90.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Valider" textAlignment="CENTER" textFill="WHITE" />
+            <JFXButton onAction="#quitterApplication" buttonType="RAISED" cancelButton="true" layoutX="218.0" layoutY="156.0" prefHeight="32.0" prefWidth="90.0" ripplerFill="WHITE" style="-fx-background-color: #2196F3;" text="Quitter" textAlignment="CENTER" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" />
+         </effect>
+      </Pane>
+   </children>
+</AnchorPane>
