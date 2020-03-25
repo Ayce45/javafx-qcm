@@ -28,6 +28,7 @@ public class Question {
     public ComboBox<String> listeReponse;
 
     private Controleur monControleur;
+    private int id;
 
 
     public static Question creer(Stage laStageUnique) {
@@ -51,6 +52,14 @@ public class Question {
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setMonControleur(Controleur monControleur) {
         this.monControleur = monControleur;
     }
@@ -58,13 +67,14 @@ public class Question {
     public void chargerQuestion() {
         QuestionReponse questionReponse = monControleur.next();
         question.setText(questionReponse.getQuestion());
+        setId(questionReponse.getIdQuestion());
         numero.setText("Question " + questionReponse.getIdQuestion());
         listeReponse.getItems().clear();
         listeReponse.getItems().addAll(questionReponse.getReponsesPossibles());
     }
 
     public void validerReponse(ActionEvent actionEvent) {
-        monControleur.validerQuestion(listeReponse.getSelectionModel().getSelectedItem());
+        monControleur.validerQuestion(listeReponse.getSelectionModel().getSelectedItem(), id);
         if (monControleur.hasNext()) {
             chargerQuestion();
         } else {

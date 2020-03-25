@@ -94,8 +94,8 @@ public class Controleur {
         return facade.next(pseudo, idQuestionnaire);
     }
 
-    public void validerQuestion(String reponse) {
-        facade.validerQuestion(pseudo, idQuestionnaire, reponse);
+    public void validerQuestion(String reponse, int id) {
+        facade.validerQuestion(pseudo, id, reponse);
     }
 
     public void goToQuestion() {
